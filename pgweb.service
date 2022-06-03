@@ -1,0 +1,21 @@
+#
+# A simple service for pgweb
+# Created by Kwabena S. Owusu (Kobe Subramaniam)
+# https://kobebigs.com | Twitter: @kobebigs
+# Fri June 3 2022 10:51 AM
+#
+
+[Unit]
+Description=pgweb
+Wants=
+After=network.target
+
+[Service]
+User=ubuntu
+Type=simple
+ExecStart=/usr/local/bin/pgweb --bind 0.0.0.0 --sessions --auth-user devops --auth-pass 1dev0p$!mvG
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
