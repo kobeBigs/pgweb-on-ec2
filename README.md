@@ -32,18 +32,21 @@ pgweb -v
 ## Usage
 Start server with `pgweb` 
 
-By default pgweb runs on 127.0.0.1, localhost on port 8081. For amazon ec2, bind 0.0.0.0 to be able to access pgweb via the instance's public IP/DNS. ```pgweb --bind 0.0.0.0```  
+By default pgweb runs on 127.0.0.1, localhost on port 8081. For amazon ec2, bind 0.0.0.0 to be able to access pgweb via the instance's public IP/DNS. 
+```
+pgweb --bind 0.0.0.0
+```  
 
-Access pgweb via *http://<instance-ip>:8081*
+Access pgweb via *instance-public-ip:8081* in your browswer
 
 To connect to a database at start of pgweb you can add the connection flags;
 ```
-pgweb --host db-host-endpoint --user dbuser --db dbname
+pgweb --bind 0.0.0.0 --host db-host-endpoint --user dbuser --db dbname
 ```
 
 pgweb also supports url scheme connection;
 ```
-pgweb --url postgres://dbuser:password@host:port/database
+pgweb --bind 0.0.0.0 --url postgres://dbuser:password@host:port/database
 ```
 
 See more [CLI options/flags](http://radio.garden/listen/voice-of-america-africa/3-yMRDpo).
